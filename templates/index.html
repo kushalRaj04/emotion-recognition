@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Speech Emotion Recognition</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: linear-gradient(
+                135deg,
+                );
+
+            color: white;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 600px;
+
+            padding: 40px;
+
+            text-align: center;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            border-radius: 20px;
+
+            backdrop-filter: blur(10px);
+
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.3);
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #d0d0d0;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .upload-box {
+            border: 2px dashed #aaa;
+
+            border-radius: 15px;
+
+            padding: 35px 20px;
+
+            margin-bottom: 25px;
+        }
+
+        .upload-box input {
+            margin-top: 15px;
+        }
+
+        input[type="file"] {
+            color: white;
+        }
+
+        button {
+            border: none;
+
+            padding: 13px 30px;
+
+            border-radius: 30px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background: white;
+
+            color: #243b55;
+
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+        }
+
+        .supported {
+            margin-top: 20px;
+
+            font-size: 13px;
+
+            color: #bbb;
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+    <div class="container">
+
+        <h1>🎙️ Speech Emotion Recognition</h1>
+
+        <p class="description">
+            Upload a WAV audio file and our CNN-LSTM
+            model will analyze the speech and predict
+            the emotion.
+        </p>
+
+
+        <form
+            action="/predict"
+            method="POST"
+            enctype="multipart/form-data"
+        >
+
+            <div class="upload-box">
+
+                <h3>Upload Speech Audio</h3>
+
+                <input
+                    type="file"
+                    name="audio"
+                    accept=".wav"
+                    required
+                >
+
+            </div>
+
+
+            <button type="submit">
+                Analyze Emotion
+            </button>
+
+        </form>
+
+
+        <p class="supported">
+            Supported format: WAV
+        </p>
+
+    </div>
+
+</body>
+
+</html>

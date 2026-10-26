@@ -1,0 +1,21 @@
+# Python virtual environments
+venv/
+.venv/
+
+# Python cache files
+__pycache__/
+*.py[cod]
+
+# Secrets and environment variables
+.env
+
+# Audio dataset and temporary audio files
+dataset/
+audio/
+*.wav
+*.mp3
+
+# Editor and operating system files
+.vscode/
+.DS_Store
+Thumbs.db
